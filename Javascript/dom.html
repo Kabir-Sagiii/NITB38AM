@@ -1,0 +1,54 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+    <script>
+      function showDocument() {
+        // console.log(document);
+        var h2Ref = document.getElementById("i1"); // reference of h2 element
+        var bodyRef = document.getElementById("b1"); // reference of body Element
+        var buttonRef = document.querySelector("button");
+        var inputRef = document.querySelector("#input1");
+
+        h2Ref.innerText = "Hello Javascript";
+        h2Ref.style.color = "red";
+
+        bodyRef.style.backgroundColor = "green";
+
+        buttonRef.style.backgroundColor = "coral";
+        buttonRef.style.padding = "15px";
+        buttonRef.style.color = "white";
+        buttonRef.style.border = "none";
+        buttonRef.style.borderRadius = "10px";
+
+        inputRef.placeholder = "Enter Some Text";
+        inputRef.value = "Naresh IT";
+      }
+    </script>
+  </head>
+  <body id="b1">
+    <div>
+      <h2 id="i1">Welcome to HTML and CSS</h2>
+      Enter Text:
+      <input type="password" placeholder="NAME" id="input1" />
+    </div>
+
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+        provident, impedit et corporis eius accusamus, possimus tempora rem
+        commodi accusantium explicabo ullam dignissimos. Sint quidem earum
+        consequuntur quam ipsam laboriosam odio natus harum accusamus eligendi
+        sed possimus rerum autem quae a sunt numquam libero dolorem qui, soluta
+        tempora. Doloribus, eveniet.
+      </p>
+      <button id="btn1" class="c1" onclick="showDocument()">
+        Show Document
+      </button>
+      <button onclick="showDocument()">Hide Document</button>
+    </div>
+  </body>
+</html>
