@@ -12,7 +12,7 @@ class Student {
   }
 }
 
-var s1 = new Student();
+var s1 = new Student(); //parent class  Object
 var s2 = new Student();
 
 s1.printDetails();
