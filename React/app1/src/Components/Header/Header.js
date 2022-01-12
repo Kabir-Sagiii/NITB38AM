@@ -11,7 +11,7 @@ class Header extends React.Component {
           suscipit tempora adipisci! Voluptatem odio, voluptas enim vero
           deleniti quia.
         </p>
-        <button>Explore More!!!</button>
+        <button className="btn btn-primary">Explore More!!!</button>
       </div>
     );
   }
