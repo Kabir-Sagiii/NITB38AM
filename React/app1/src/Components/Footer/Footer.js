@@ -1,10 +1,11 @@
 import React from "react";
+import "./Footer.css";
 
 function Footer() {
   return (
-    <div>
+    <div className="footer">
       <h1>Functional Component</h1>
-      <ul>
+      <ul class="ul1">
         <li>HTML</li>
         <li>CSS</li>
         <li>Javascript</li>

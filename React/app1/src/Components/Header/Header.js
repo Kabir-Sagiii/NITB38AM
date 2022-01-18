@@ -1,4 +1,5 @@
 import React from "react";
+import Main from "../Main/Main";
 
 class Header extends React.Component {
   render() {
