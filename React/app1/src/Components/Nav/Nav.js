@@ -35,6 +35,16 @@ class Nav extends Component {
                 User-Profile
               </Link>
             </li>
+            <li className="nav-item">
+              <Link to="/ct" className="nav-link text-white">
+                ContextAPI
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/contextapitask" className="nav-link text-white">
+                Context-Task
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

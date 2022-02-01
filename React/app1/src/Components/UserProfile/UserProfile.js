@@ -7,20 +7,46 @@ class UserProfile extends Component {
     super(props);
 
     this.state = {
-      info: userData,
+      info: userData.results,
     };
   }
 
   updateUser = () => {
     this.setState({
-      info: userData,
+      info: userData.results,
     });
   };
 
   updateEmployee = () => {
     this.setState({
-      info: emp,
+      info: emp.results,
     });
+  };
+
+  filterUserData = (event) => {
+    console.log(event);
+    if (event.target.value === "male") {
+      // alert("male");
+      this.filteredData = userData.results.filter((ele) => {
+        return ele.gender === "male";
+      });
+      this.setState({
+        info: this.filteredData,
+      });
+    } else if (event.target.value === "female") {
+      // alert("female");
+      this.filteredData = userData.results.filter((ele) => {
+        return ele.gender === "female";
+      });
+      this.setState({
+        info: this.filteredData,
+      });
+    } else {
+      // alert("all");
+      this.setState({
+        info: userData.results,
+      });
+    }
   };
 
   render() {
@@ -38,6 +64,35 @@ class UserProfile extends Component {
           </p>
         </div>
         <div className="row">
+          <div className="col-1">
+            <input
+              type="radio"
+              name="gender"
+              value="all"
+              onChange={this.filterUserData}
+            />
+            All
+          </div>
+          <div className="col-1">
+            <input
+              type="radio"
+              name="gender"
+              value="male"
+              onChange={this.filterUserData}
+            />
+            Male
+          </div>
+          <div className="col-1">
+            <input
+              type="radio"
+              name="gender"
+              value="female"
+              onChange={this.filterUserData}
+            />
+            Female
+          </div>
+        </div>
+        <div className="row mt-3">
           <div className="col-4">
             <button className="btn btn-primary" onClick={this.updateUser}>
               User Information
@@ -63,7 +118,7 @@ class UserProfile extends Component {
               </thead>
 
               <tbody>
-                {this.state.info.results.map(function (element) {
+                {this.state.info.map(function (element) {
                   return (
                     <tr>
                       <td>

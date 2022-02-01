@@ -19,6 +19,8 @@ import Nav from "./Components/Nav/Nav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PageNotFound from "./Components/PageNotFound/PageNotFound";
 import ProfileCard from "./Components/ProfileCard/ProfileCard";
+import ContextA from "./Components/ContextAPI/A";
+import ContextHome from "./Components/ContextTask/Home";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/axios" element={<AxiosUser />} />
           <Route path="/userprofile" element={<ProfileCard />} />
+          <Route path="/ct" element={<ContextA />} />
+          <Route path="/contextapitask" element={<ContextHome />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>

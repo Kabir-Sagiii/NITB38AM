@@ -14,6 +14,7 @@ class AxiosUser extends Component {
     Axios.get("https://jsonplaceholder.typicode.com/users").then(
       (response) => {
         console.log(response.data);
+
         this.setState({
           userInfo: response.data,
         });
