@@ -21,6 +21,9 @@ import PageNotFound from "./Components/PageNotFound/PageNotFound";
 import ProfileCard from "./Components/ProfileCard/ProfileCard";
 import ContextA from "./Components/ContextAPI/A";
 import ContextHome from "./Components/ContextTask/Home";
+import Mounting from "./Components/Lifecyle/Mounting";
+import UpdatingPhase from "./Components/Lifecyle/UpdatingPhase";
+import HOCHome from "./Components/HOC/HOCHome";
 
 function App() {
   return (
@@ -35,6 +38,8 @@ function App() {
           <Route path="/userprofile" element={<ProfileCard />} />
           <Route path="/ct" element={<ContextA />} />
           <Route path="/contextapitask" element={<ContextHome />} />
+          <Route path="/UP" element={<UpdatingPhase />} />
+          <Route path="/hoc" element={<HOCHome />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>

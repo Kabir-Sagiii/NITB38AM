@@ -9,6 +9,10 @@ class ProfileCard extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.getUserDataFromServer();
+  }
+
   getUserDataFromServer = async () => {
     this.responsefromServer = await axios.get(
       "https://randomuser.me/api/?results=20"

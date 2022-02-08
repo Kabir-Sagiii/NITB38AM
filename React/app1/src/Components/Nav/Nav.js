@@ -45,6 +45,11 @@ class Nav extends Component {
                 Context-Task
               </Link>
             </li>
+            <li className="nav-item">
+              <Link to="/hoc" className="nav-link text-white">
+                HOC
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>
