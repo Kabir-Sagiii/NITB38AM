@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import clientAction from "../../Actions/ClientAction";
+import { connect } from "react-redux";
 
 class Clinet extends Component {
   constructor(props) {
@@ -12,9 +14,10 @@ class Clinet extends Component {
     this.h2Ref = React.createRef();
   }
   getData = () => {
-    console.log(this.textRef.current.value);
-    console.log(this.h2Ref.current.innerText);
-    alert(this.state.userData);
+    // console.log(this.textRef.current.value);
+    // console.log(this.h2Ref.current.innerText);
+    // alert(this.state.userData);
+    clientAction(this.state.userData, this.props.dispatch);
   };
 
   updateState = (event) => {
@@ -57,4 +60,13 @@ class Clinet extends Component {
     );
   }
 }
-export default Clinet;
+export default connect(
+  (storeData) => {
+    return {};
+  },
+  (dispatch) => {
+    return {
+      dispatch,
+    };
+  }
+)(Clinet);
