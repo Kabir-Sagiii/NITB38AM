@@ -1,7 +1,13 @@
 const express = require("express"); // Importing the express package
 const app = express(); // Inilizing the express app
+const UserRouter = require("./routes/User"); // Import your Route
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const port = 3131;
+app.use(cors());
+app.use(bodyParser.json());
+app.use("/User", UserRouter);
 
 app.get("/", function (req, res) {
   res.send("Welcome to Express JS"); // http://localhost:3131/ - get
