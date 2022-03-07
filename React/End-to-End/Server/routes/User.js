@@ -4,7 +4,7 @@ const mongodb = require("mongodb"); // Imported mongodb package
 const MongoClient = mongodb.MongoClient;
 const ObjectId = mongodb.ObjectId;
 const url =
-  "mongodb+srv://NITReactB3:nit999999@nitreactb37am.a18s0.mongodb.net/NITReactB3UserDB?retryWrites=true&w=majority";
+  "URL"
 
 const route = express.Router();
 
@@ -47,14 +47,17 @@ route.get("/getSpecUser/:id", function (req, res) {
 }); //http://localhost:3131/User/getSpecUser/{id}
 
 route.post("/insertUserData", function (req, res) {
+  console.log(req.body);
   var n = req.body.name;
   var c = req.body.city; //http://localhost:3131/User/insertUserData
   var e = req.body.email;
+  var p = req.body.password;
 
   var docu = {
     name: n,
     city: c,
     email: e,
+    password: p,
   };
 
   MongoClient.connect(url, function (err, cluster) {
@@ -112,6 +115,7 @@ route.put("/updateUserData/:id", function (req, res) {
 }); //http://localhost:3131/User/updateUserData/{id}
 
 route.delete("/delete/:id", function (req, res) {
+  console.log(req.params.id);
   var id = req.params.id;
   MongoClient.connect(url, function (err, cluster) {
     if (err) {
@@ -120,15 +124,24 @@ route.delete("/delete/:id", function (req, res) {
     } else {
       var dbRef = cluster.db("NITReactB3UserDB");
       var collectionRef = dbRef.collection("UserCollection");
-      collectionRef.deleteOne({
-        _id: ObjectId(id),
-        funtion(err, msg) {
-          if (err) {
-            res.send("error while deleting the data");
-          } else {
-            res.send("Deleted Successfully");
-          }
-        },
+      // collectionRef.deleteOne({
+      //   _id: ObjectId(id),
+      //   funtion(err, msg) {
+      //     if (err) {
+      //       res.send("error while deleting the data");
+      //     } else {
+      //       res.send("Deleted Successfully");
+      //       console.log(msg);
+      //     }
+      //   },
+      // });
+      collectionRef.deleteOne({ _id: ObjectId(id) }, function (err, msg) {
+        if (err) {
+          res.send(error);
+        } else {
+          console.log("deleted", msg);
+          res.send("Deleted");
+        }
       });
     }
   });

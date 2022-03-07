@@ -31,6 +31,11 @@ class Nav extends React.Component {
                 New User
               </Link>
             </li>
+            <li>
+              <Link to="/fv" className="nav-link text-white">
+                Form Validation
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

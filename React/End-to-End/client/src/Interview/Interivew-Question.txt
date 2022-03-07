@@ -1,0 +1,139 @@
+1.What is React ??
+ReactJS is the Client Side Javascript Library.
+ReactJs given by facebook.
+ReactJS used to simplify the complex UI.
+By using ReactJS, we can split the complex UI to multiple executable solutions.
+Each executable solution called as component.
+
+2.What is Component ?
+Components are the building blocks of any React App.
+
+3.What is JSX ??
+JSX stands for Javascript + XML
+Brower can’t understand XML
+So, we must convert XML to Javascript
+We will use “Babel” tool for conversion.
+We will develop React Applications by using JSX.
+It makes easier to create templates
+It is faster than regular JavaScript because it performs optimization while translating the code to JavaScript
+JSX is a XML-like syntax extension to ECMAScript without any defined semantics
+
+4.What is React DOM ??
+ This package serves as the entry point to the DOM and server renderers for React.
+
+5.what are the differences between framework and library?
+Framework:
+
+A framework is a skeleton where application defines its own features to fill out the skeleton.
+But in the frame work the control is vice versa of library where framework calls or control.
+Library:
+
+A library is a collection of class definitions for which code reusability is high.
+when we call a method from a library at that time we are in control over the library
+
+6.Will react follows MVC?
+No, React won’t follow MVC because it follows unidirectional data flow where ever MVC follows two-directional data flow.
+
+7. In how many ways we can create component?
+In react.js we can create component in two ways 
+    Class Component
+    Functional Component
+
+8.what is state ??
+State is predefined object in react js. It is used to store the component related data.
+
+9.what are props ??
+React props are like function arguments in javaScript and attributes in HTML.
+React allows us to pass information to a component using something called props.
+To pass the data form parent component to child component we can use props.
+Props are immutable(can’t change the value of props).
+
+10.what are the diffetences between state and props ?
+          
+11.how to change the state in ReactJS ??
+        using setState()
+
+12.explain map() function in reactjs
+
+13.how to provide communication between Components ??
+
+14.explain state management in ReactJS ??
+       explain redux,contextapi and props concept
+
+15.how to maintain the immutablity in ReactJS ??
+We can use this.setState to maintain the immutability
+
+16.what are the middlewares are available in ReactJS ??
+The famous middleware’s in ReactJs are React-Thunk and React-Saga. The middleware sits in between the dispatch and reducers.
+
+17.what is thunk ??
+Thunk is a middleware library in react. It supports for asynchronous data flow. Asynchronous Messaging means that, it is a one way communication and the flow of communication is one way only.
+ Thunk created by using “promises” functions. It allows to write action creators that return a function instead of an action.
+
+18.explain HOC in ReactJS ??
+Higher Oreder Component (HOC) is an Advanced technique in React for using Component logic.
+ Higher Order Component is a function that takes a Component and returns a new Component.
+ Higher Order Component are common in third-party React libraries,such as Redux.
+
+19.Explain life cycle hooks in Reactjs…?
+
+20.Is render manditory in ReactJs….?
+Yes, render() function is manditory in ReactJs.
+ The render() method is the only required method in a class Component.
+ The render() function should be pure.
+
+21.What are pure Components in Reactjs…?
+Pure Components compare all the properties of the current state with the next state,
+and current props with the next props.
+Pure Components helps in reducing unnecessary render() method calls.
+
+22.what are the differences between stateful and stateless components in Reactjs….?
+
+23.what is functional component in ReactJS ??
+it is simple javascript function and pass data by using props
+it is use for ajax and API request.
+
+24.explain Routing in ReactJS ??
+
+25.what is create-react-app ?
+“create-react-app” is the tool given by facebook developers. and this tool used to create the React Applications and its saves you from time consuming setup configuration.
+We will install ” create-react-app ” by using following command
+ npm install -g create-react-app@latest
+
+26.what is super() ??
+ “super” keyword is used as a “function” which calls the parent class.
+The super() in javascript is used to call the methods of the parent class.
+It is used within a constructor function to call the parent constructor function.
+
+27.Advantages and disadvantages of reactjs ??
+Advantages:
+------------------
+Virtual DOM in ReactJS makes user experience better and developer’s work faster.
+React components can be re-used easily throughout the application.
+JSX makes components/blocks code read-able.
+ReactJS improves performance due to virtual DOM.
+ReactJS applications are easy to test.
+Benefit of Having JavaScript Library because JavaScript library provides more flexibility.
+JSX is an optional syntax extension to JavaScript that makes writing our own components much easier.
+It is SEO(Search Engine Optimization) friendly.
+
+Disadvantages :
+-------------------------
+React technologies updating so fast that there is no time to make proper documentation.
+ReactJS Covers only the UI Layers of the app and nothing else.
+JSX(JavaScript eXtension) as a barrier: React uses JSX, HTML with JavaScript mixed together. For new Developers, JSX is a barrier.
+ReactJS is not for small scale projects.
+The frequent updates of react js is a major cause of frustration among developer.
+
+
+28.what are the differences between DOM & Virtual DOM ??
+                      DOM                                                                                 Virtual DOM
+
+ It updates slow.                                                                 1. It updates faster.
+DOM can directly update HTML.                                  2. Can’t directly update HTML.
+Creates a new DOM if element updates.                      3. Updates the JSX if element updates.
+DOM manipulation is very expensive.                         4. DOM manipulation is very easy.
+Too much of memory wastage.                                      5. No memory wastage.
+
+
+

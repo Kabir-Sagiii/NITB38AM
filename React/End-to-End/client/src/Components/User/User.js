@@ -1,16 +1,29 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { sendRequestToDeleteUser } from "../../Services/UserService";
 
 function User(props) {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
+    getDataFromServer();
+  }, []);
+
+  const getDataFromServer = () => {
     axios.get("http://localhost:3131/User/getUserData").then((res) => {
       console.log(res.data);
       setUsers(res.data);
     });
-  }, []);
+  };
+
+  const deleteData = (id) => {
+    // alert(id);
+    sendRequestToDeleteUser(id).then((res) => {
+      alert("Deleted Successfully");
+      getDataFromServer();
+    });
+  };
 
   return (
     <div className="container mt-5">
@@ -70,12 +83,21 @@ function User(props) {
                         )}
                       </td>
                       <td>
-                        <Link className="btn btn-warning" to="/edit">
+                        <Link
+                          className="btn btn-warning"
+                          to={`/edit/${ele._id}`}
+                        >
                           Edit
                         </Link>
                       </td>
                       <td>
-                        <Link className="btn btn-warning" to="/delete">
+                        <Link
+                          onClick={() => {
+                            deleteData(ele._id);
+                          }}
+                          className="btn btn-warning"
+                          to="/user"
+                        >
                           Delete
                         </Link>
                       </td>
